@@ -13,7 +13,8 @@ const HomePage = ({ membersArr }) => {
 
   useEffect(() => {
     let filteredMembers = membersArr.filter((member) => {
-      return member.username.toLowerCase().includes(searchKey);
+      const fullName = `${member.first_name} ${member.last_name}`;
+      return fullName.toLowerCase().includes(searchKey);
     });
 
     setFilteredMembersArray([...filteredMembers]);
